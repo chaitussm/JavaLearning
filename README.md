@@ -33,3 +33,9 @@ java -cp target/classes com.imports.PrintStatementInjava
 ```
 
 Browse sources under `demo/src/main/java/` (packages such as `com.imports`, `com.exceptionHandling`, collections, serialization, and more).
+
+## Daily CI pipeline
+
+GitHub Actions workflow [`.github/workflows/java-end-to-end-ci.yml`](.github/workflows/java-end-to-end-ci.yml) runs **every day at 18:30 UTC** (and on pushes/PRs to `master`). It compiles the demo module, runs every class with a `main` method, and uploads a styled HTML execution report as the `java-execution-report-*` artifact.
+
+Trigger manually from the **Actions** tab → **Java Daily Execution CI** → **Run workflow**.
