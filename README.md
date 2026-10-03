@@ -1,41 +1,42 @@
+# Table of Contents
+
+- [Java Project](#java-project)
+  - [Overview](#overview)
+  - [What this repository contains](#what-this-repository-contains)
+  - [Documentation](#documentation)
+
+---
+
 # JavaLearning
 
-Hands-on Java study workspace with runnable examples, modeled after [Java-Project](https://github.com/chaitussm/Java-Project).
+<!-- TOC -->
+- [Java Project](#java-project)
+  - [Overview](#overview)
+  - [What this repository contains](#what-this-repository-contains)
+  - [Documentation](#documentation)
+<!-- /TOC -->
 
-## Prerequisites
+## Overview
 
-- JDK 17+ (JDK 21 recommended)
-- Apache Maven 3.8+
+> A hands-on Java study project covering core programs, data files, and CI/CD learning material.
 
-## Build
+This project contains Java learning materials, runnable examples, and CI pipeline documentation. Explore Java fundamentals and the accompanying pipeline documentation with complete YAML steps and explanations.
 
-```bash
-cd demo
-mvn -B clean compile
-```
+## What this repository contains
 
-## Run a program
+| Area | Description |
+| ---- | ----------- |
+| Java program basics | Core Java concepts with runnable examples in the `demo` module |
+| Collections | Lists, sets, queues, maps, cursors, and related data structures |
+| Serialization | Object serialization, externalization, and related advanced topics |
+| Reflection | Runtime inspection of classes, fields, constructors, and methods |
+| Regular expressions | Pattern matching, validation, and file extraction examples |
+| CI/CD pipeline | End-to-end GitHub Actions workflow with YAML steps and explanations |
 
-Each class with a `main` method can be run after compiling:
+## Documentation
 
-```bash
-cd demo
-mvn -B compile
-mvn -q exec:java -Dexec.mainClass="com.imports.PrintStatementInjava"
-```
+All documentation is organized under the [`docs/`](docs/) folder:
 
-Or with `java` directly:
-
-```bash
-cd demo
-mvn -B compile
-java -cp target/classes com.imports.PrintStatementInjava
-```
-
-Browse sources under `demo/src/main/java/` (packages such as `com.imports`, `com.exceptionHandling`, collections, serialization, and more).
-
-## Daily CI pipeline
-
-GitHub Actions workflow [`.github/workflows/java-end-to-end-ci.yml`](.github/workflows/java-end-to-end-ci.yml) runs **every day at 18:30 UTC** (and on pushes/PRs to `master`). It compiles the demo module, runs every class with a `main` method, and uploads a styled HTML execution report as the `java-execution-report-*` artifact.
-
-Trigger manually from the **Actions** tab → **Java Daily Execution CI** → **Run workflow**.
+- [`docs/README.md`](docs/README.md) — documentation index
+- [`docs/README-ci.md`](docs/README-ci.md) — CI pipeline documentation
+- [`docs/concepts/`](docs/concepts/) — concept guides and tutorials
